@@ -1,0 +1,13 @@
+declare module 'escomplex';
+declare module 'fs-extra';
+declare module 'chalk';
+declare module 'yargs';
+declare module 'yargs/helpers';
+declare module 'glob';
+declare module './complexity-analyzer';
+declare module './type-analyzer';
+declare module './security-analyzer';
+declare module './duplication-analyzer';
+declare module './dependency-analyzer';
+declare module './reporter';
+declare module './types'; 

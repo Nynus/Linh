@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Mapper - Dependency Visualization</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h1>Code Mapper</h1>
+        <div class="form-group">
+          <label for="project-path">Project Path:</label>
+          <input type="text" id="project-path" placeholder="Enter project path..." />
+        </div>
+        <button id="analyze-btn">Analyze</button>
+
+        <div class="controls">
+          <h2>Controls</h2>
+          <div class="search-container">
+            <input type="text" id="search-nodes" placeholder="Search nodes..." />
+          </div>
+
+          <div class="slider-container">
+            <h3>Node Size</h3>
+            <input type="range" id="node-size" min="2" max="20" value="8" />
+            <span id="node-size-value">8</span>
+          </div>
+
+          <div class="slider-container">
+            <h3>Link Distance</h3>
+            <input type="range" id="link-distance" min="50" max="300" value="100" />
+            <span id="link-distance-value">100</span>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="show-labels" checked />
+            <label for="show-labels">Show Labels</label>
+          </div>
+
+          <div class="button-group">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="internal">Internal</button>
+            <button class="filter-btn" data-filter="external">External</button>
+          </div>
+        </div>
+
+        <div class="analysis-panel">
+          <h2>Analysis</h2>
+          <div class="analysis-item">
+            <h3>Orphaned Modules</h3>
+            <div id="orphans-list" class="scrollable-list"></div>
+          </div>
+          <div class="analysis-item">
+            <h3>Circular Dependencies</h3>
+            <div id="circular-list" class="scrollable-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #1f77b4"></span>
+            <span>Normal</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #d62728"></span>
+            <span>Circular Dependency</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #ff7f0e"></span>
+            <span>Orphan</span>
+          </div>
+        </div>
+
+        <div id="graph-container"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

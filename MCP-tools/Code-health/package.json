@@ -1,0 +1,27 @@
+{
+  "name": "mcp-code-health",
+  "version": "1.0.0",
+  "description": "MCP Code-health tool for analyzing code quality",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-code-health": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.2.0",
+    "glob": "^7.2.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.25",
+    "@types/yargs": "^17.0.32",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
